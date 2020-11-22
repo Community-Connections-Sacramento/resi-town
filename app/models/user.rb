@@ -78,16 +78,17 @@ class User < ApplicationRecord
 
 # this function uses Gibbon and Mailchimp API to subscribe/unsubscribe users
   def subscribe_to_mailchimp(action = true)
-    gibbon = Gibbon::Request.new
-    gibbon.timeout = 15
-    list_id = Settings.list_id
+    if Rails.env.production?
+      gibbon = Gibbon::Request.new
+      gibbon.timeout = 15
+      list_id = Settings.list_id
 
-    response = gibbon.lists(list_id).members(Digest::MD5.hexdigest(self.email)).upsert(body: {
-        email_address: self.email,
-        status: action ? "subscribed" : "unsubscribed",
-    })
-
-    response
+      response = gibbon.lists(list_id).members(Digest::MD5.hexdigest(self.email)).upsert(body: {
+          email_address: self.email,
+          status: action ? "subscribed" : "unsubscribed",
+      })
+      response
+    end
   end
 
 # this function checks the newsletter_consent field in before_save
@@ -101,8 +102,10 @@ class User < ApplicationRecord
 
 # this function is used with before_create
   def opt_into_newsletter_on_sign_up
-    self.newsletter_consent = true
-    subscribe_to_mailchimp(true)
+    if Rails.env.production?
+      self.newsletter_consent = true
+      subscribe_to_mailchimp(true)
+    end
   end
 
 # this function checks if this user has completed Blank Slate training
@@ -144,3 +147,4 @@ class User < ApplicationRecord
   before_create :opt_into_newsletter_on_sign_up
 
 end
+
