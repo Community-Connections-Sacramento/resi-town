@@ -80,7 +80,6 @@ class Project < ApplicationRecord
 
   def category
     project_categories = {}
-
     begin
       Settings.project_categories.each do |category|
         intersection = self.project_type_list.to_a & category['project_types'].to_a

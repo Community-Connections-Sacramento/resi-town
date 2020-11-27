@@ -77,19 +77,43 @@ organization_statuses:
 # it can ask to be highlighted.
 max_volunteers_for_highlight_offer: 30
 
-project_categories:
-  - name: On Site
-    slug: onsite
-    body: Volunteer positions that take place in-person.
-    project_types:
-      - (on site)
-    color: purple
+project_locations:
   - name: Remote
     slug: remote
-    body: Volunteer positions that can be done remotely.
+  - name: Athens (On Site)
+    slug: onsite
+  - name : Other Georgia Locales
+    slug: other
+
+project_categories:
+  - name: Medical
+    slug: medical
+    body: Support our overwhelmed health systems with medical innovation.
     project_types:
-      - Remote
+      - Scale testing
+      - Medical facilities
+      - Medical equipments
+      - Treatment R&D
+    color: purple
+  - name: Prevention
+    slug: prevention
+    body: Inform, reduce, and control the spread of the outbreak.
+    project_types:
+      - Track the outbreak
+      - Reduce spread
     color: orange
+  - name: Community
+    slug: community
+    body: Work together to help our stressed communities.
+    project_types:
+      - E-Learning
+      - Job placement
+      - Mental health
+      - Help out communities
+      - Map volunteers to needs
+      - News and information
+      - Social giving
+    color: blue
 
 global_announcements:
 #  - title: Helpful resources for your projects
