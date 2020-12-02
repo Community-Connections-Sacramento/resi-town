@@ -116,3 +116,6 @@ gem 'i18n-js'
 gem "json", '~> 2.1.0'
 gem "recaptcha"
 gem "gibbon", "~> 3.3"
+
+# Formatting Code
+gem 'htmlbeautifier'
