@@ -1,15 +1,15 @@
 const Project = {
   initialize() {
     $(document).on('turbolinks:load', () => {
-      $('.not-accepting-volunteers').click(function(ev) {
+      $('.not-accepting-volunteers').click(function (ev) {
         Project.notAcceptingVolunteers(this, ev);
       });
 
-      $('.volunteer-with-skills').click(function(ev) {
+      $('.volunteer-with-skills').click(function (ev) {
         Project.volunteerWithSkills(this, ev);
       });
 
-      $('.volunteer-without-skills').click(function(ev) {
+      $('.volunteer-without-skills').click(function (ev) {
         Project.volunteerWithoutSkills(this, ev);
       });
     });
@@ -24,7 +24,7 @@ const Project = {
     const headerHTML = I18n.t('this_project_is_not_accepting_volunteers');
     const bodyHTML = I18n.t('we_re_sorry_this_project_has_indicated_no_volunteers');
 
-    Covid.showModal(headerHTML, bodyHTML, [ { type: 'cancel', text: 'OK' } ], 'warning');
+    Covid.showModal(headerHTML, bodyHTML, [{ type: 'cancel', text: 'OK' }], 'warning');
 
     return false;
   },
@@ -72,7 +72,7 @@ const Project = {
       $.post(targetHref, { volunteer_note: volunteerNote });
     }
 
-    Covid.showModal(headerHTML, bodyHTML, [ { type: 'cancel' }, { type: 'submit', text: I18n.t('volunteer'), callback } ], 'warning');
+    Covid.showModal(headerHTML, bodyHTML, [{ type: 'cancel' }, { type: 'submit', text: I18n.t('volunteer'), callback }], 'warning');
 
     return false;
   },
@@ -88,7 +88,7 @@ const Project = {
     const bodyHTML = I18n.t('skills_needed_do_not_match', { skills_required: skillsRequired });
 
     const callback = () => window.location.href = targetHref;
-    Covid.showModal(headerHTML, bodyHTML, [ { type: 'cancel' }, { type: 'submit', text: I18n.t('edit_profile'), callback } ], 'warning');
+    Covid.showModal(headerHTML, bodyHTML, [{ type: 'cancel' }, { type: 'submit', text: I18n.t('edit_profile'), callback }], 'warning');
 
     return false;
   }
