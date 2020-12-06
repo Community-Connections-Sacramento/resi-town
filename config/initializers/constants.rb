@@ -16,7 +16,7 @@ FACEBOOK_LINK = 'https://www.facebook.com/Athens-help-With-Covid-19-103765018035
 TWITTER_LINK = 'https://twitter.com/AthGaHelpwCovid'
 NEWSLETTER_LINK = 'http://eepurl.com/g3hEa5'
 LOCAL_AFFILIATES = 'University of Georgia, UNG, Piedmont College, etc.'
-GITHUB_LINK = 'https://github.com/athens-helpwithcovid/covid-volunteers'
+GITHUB_LINK = 'https://github.com/Community-Connections-Sacramento/resi-town'
 ALL_PROJECT_TYPES = [
     'Contact tracing',
     'Reduce spread',
