@@ -8,7 +8,7 @@ class Admin::VolunteerGroupsController < ApplicationController
 
   def create
     @volunteer_group = VolunteerGroup.new({ project: @project })
-
+    #byebug
     accepted_user_ids = (params[:accepted_user_ids] || '').split(',').reject(&:empty?)
 
     if accepted_user_ids.present?

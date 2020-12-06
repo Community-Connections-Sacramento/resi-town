@@ -1,15 +1,15 @@
 const VolunteerGroups = {
   initialize() {
-    $( document ).on('turbolinks:load', () => {
-      $('#add_volunteers_to_group_button').click(function() {
+    $(document).on('turbolinks:load', () => {
+      $('#add_volunteers_to_group_button').click(function () {
         VolunteerGroups.addVolunteerToGroup(this);
       })
 
-      $('#volunteers_group_intro_email_button').click(function() {
+      $('#volunteers_group_intro_email_button').click(function () {
         VolunteerGroups.prepareIntroEmail(this);
       })
 
-      $('#volunteer_list').on('click', '.volunteer-in-group', function() {
+      $('#volunteer_list').on('click', '.volunteer-in-group', function () {
         VolunteerGroups.toggleKeepInGroup(this);
       })
     });
@@ -70,7 +70,7 @@ const VolunteerGroups = {
       </div>
       <div class="mt-2 sm:flex sm:justify-between">
         <div class="text-sm leading-5 text-gray-500">
-          location: ${user.location} / skills: ${user.skill_list ? user.skill_list.join(', '): ''}
+          location: ${user.location} / skills: ${user.skill_list ? user.skill_list.join(', ') : ''}
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@ Please let me know if you have any questions or concerns.
 Thank you!
 HWC Core team`;
 
-    const mailHref=`mailto:${projectOwnerEmail}?reply-to=${projectOwnerEmail}&bcc=${volunteerEmails.join(',').replace(/\+/g, '%2B')}&subject=${subject}&body=${body.replace(/\n/g, '%0D%0A').replace(/\+/g, '%2B')}`;
+    const mailHref = `mailto:${projectOwnerEmail}?reply-to=${projectOwnerEmail}&bcc=${volunteerEmails.join(',').replace(/\+/g, '%2B')}&subject=${subject}&body=${body.replace(/\n/g, '%0D%0A').replace(/\+/g, '%2B')}`;
     window.open(mailHref, '_blank');
   },
 };
