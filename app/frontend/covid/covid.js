@@ -13,7 +13,7 @@ import Resources from './resources'
 
 const Covid = {
   initialize() {
-    $( document ).on('turbolinks:load', () => {
+    $(document).on('turbolinks:load', () => {
       $('#disable_funding_alert').click(() => {
         Cookies.set('funding_alert', false, { expires: 99999 })
         $('#disable_funding_container').remove();
@@ -116,22 +116,22 @@ const Covid = {
     if (color == 'blue') {
       classes = 'bg-blue-100 text-blue-800  bg-blue-300';
     } else {
-      classes = 'bg-primary-100 text-primary-800  bg-primary-300';
+      classes = 'bg-primary-50 text-primary-800  bg-primary-50';
     }
     const badgeHTML = `<div class="flex flex-row flex-wrap space-x-right-2 space-y-top-2">
       ${items.map(item =>
-        `<div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium leading-5 flex-grow-0 flex-shrink-0 ${classes}" title=${title}>
+      `<div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium leading-5 flex-grow-0 flex-shrink-0 ${classes}" title=${title}>
             <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-primary-400" fill="currentColor" viewBox="0 0 8 8">
               <circle cx="4" cy="4" r="3"></circle>
             </svg>
             ${item}
           </div>`
-        ).join('')}
+    ).join('')}
      </div>`;
     return badgeHTML
   },
   keepFiltersSticky() {
-    stickybits('.js-sticky-filter', {stickyBitStickyOffset: 20})
+    stickybits('.js-sticky-filter', { stickyBitStickyOffset: 20 })
   },
   initFilter(label, filter, options, selected) {
     return {
