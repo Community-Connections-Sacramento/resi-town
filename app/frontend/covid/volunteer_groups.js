@@ -18,6 +18,7 @@ const VolunteerGroups = {
   addVolunteerToGroup(that) {
     const projectId = $('#project_id').val();
     const currentAcceptedUserIds = $('#accepted_user_ids').val().split(',').filter(el => el);
+    console.log($('#accepted_user_ids').val())
 
     $('.volunteer-in-group').each((_, el) => {
       const userId = $(el).find('.volunteer-group-user-id').val();

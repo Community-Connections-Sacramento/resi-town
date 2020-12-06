@@ -38,7 +38,7 @@ class Admin::VolunteerGroupsController < ApplicationController
     @users = @users.search(params[:filter]) if params[:filter].present?
     @users = @users.order('RANDOM()')
     @users = @users.limit(10)
-
+    #byebug
     respond_to do |format|
       format.json do
         render json: { message: 'done', users: @users }
