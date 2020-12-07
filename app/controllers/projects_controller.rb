@@ -18,13 +18,23 @@ class ProjectsController < ApplicationController
 
     if request.path != projects_path and params[:category_slug].present?
       @project_category = Settings.project_categories.find { |category| category.slug == params[:category_slug] }
-
+      #byebug
       raise ActionController::RoutingError, 'Not Found' if @project_category.blank?
 
       if @project_category.present?
         @applied_filters[:project_types] = @project_category[:project_types]
         @featured_projects = Rails.cache.read "project_category_#{@project_category[:name].downcase}_featured_projects"
+        #byebug
       end
+    # if request.path != projects_path and params[:location_slug].present?
+    #   @project_location = Settings.project_locations.find { |location| location.slug == params[:location_slug] }
+    #   #byebug
+    #   raise ActionController::RoutingError, 'Not Found' if @project_location.blank?
+
+    #   if @project_location.present?
+    #     @applied_filters[:project_types] = @project_location[:project_types]
+    #     @featured_projects = Rails.cache.read "project_location_#{@project_location[:name].downcase}_featured_projects"
+    #   end
     else
       @featured_projects = Project.get_featured_projects
     end

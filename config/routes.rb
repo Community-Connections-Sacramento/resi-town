@@ -63,6 +63,7 @@ Rails.application.routes.draw do
 
 
   get '/:category_slug(/p/:page)', to: 'projects#index', action: :index
+  # get '/:location_slug(/p/:page)', to: 'projects#index', action: :index
 
 
 end
