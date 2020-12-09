@@ -35,6 +35,29 @@ colors:
     200: '#fad1e8'
     ...
 ```
+If you'd like to add more custom colors, you can do so in `/theme/tailwind.config.yml:` 
+
+```yaml
+colors:
+  primary:
+    50: '#fdf2f8'
+    100: '#fce8f3'
+    200: '#fad1e8'
+    ...
+  pink:
+    50: '#e8068a'
+    ...
+```
+
+Then, you need to add the corresponding color key in the 'themeColors' object in tailwind.config.js in order for the tailwind.config.yml to be parsed correctly:
+
+```javascript
+let themeColors = {
+  primary: uiColors.indigo,
+  secondary: uiColors.gray,
+  pink: uiColors.pink,
+  }
+```
 
 ## Tweaking i18n keys
 
