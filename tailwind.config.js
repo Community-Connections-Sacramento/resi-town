@@ -9,16 +9,18 @@ const yaml = require('js-yaml')
 let themeConfig
 const themeFile = './theme/tailwind.config.yml'
 try {
-    let fileContents = fs.readFileSync(themeFile, 'utf8')
-    themeConfig = yaml.safeLoad(fileContents)
+  let fileContents = fs.readFileSync(themeFile, 'utf8')
+  themeConfig = yaml.safeLoad(fileContents)
 } catch (e) {
-    console.log(e)
+  console.log(e)
 }
 
 // Setting defaults
 let themeColors = {
   primary: uiColors.indigo,
   secondary: uiColors.gray,
+  pink: uiColors.pink,
+  teal: uiColors.teal,
 }
 
 // Parsing the theme config
@@ -27,7 +29,7 @@ Object.keys(themeColors).forEach((themeColor) => {
     if (themeConfig.colors[themeColor]) {
       if (typeof themeConfig.colors[themeColor] === 'string' && themeConfig.colors[themeColor].startsWith('tailwind/ui/')) {
         themeColors[themeColor] = uiColors[themeConfig.colors[themeColor].replace('tailwind/ui/', '')]
-      // arbitrary checking if this object has keys 50 & 900 corresponding to the tailwind color system
+        // arbitrary checking if this object has keys 50 & 900 corresponding to the tailwind color system
       } else if (themeConfig.colors[themeColor][50] && themeConfig.colors[themeColor][900]) {
         themeColors[themeColor] = themeConfig.colors[themeColor]
       }
@@ -45,6 +47,9 @@ module.exports = {
         },
         secondary: {
           ...themeColors.secondary,
+        },
+        pink: {
+          ...themeColors.pink,
         },
         'hero-black': '#3D3D3D',
         'cat-education': '#F82B2B',
