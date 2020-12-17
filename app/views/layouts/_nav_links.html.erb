@@ -35,7 +35,7 @@
 <% if current_user %>
   <div class="relative group flex">
     <%= link_to 'javascript:void(0);', class: "#{nav_link_inactive_class(variant)} hidden md:flex" do %>
-      <%= t('account') %> <%= inline_svg_pack_tag 'media/svgs/chevron-right.svg', class: 'fill-current text-gray-600 transform rotate-90' %>
+      <%= t('account') %> <%= inline_svg_pack_tag 'media/svgs/chevron-right.svg', class: 'fill-current transform rotate-90' %>
     <% end %>
 
     <div class="md:hidden md:group-hover:flex w-full md:flex-col md:absolute md:z-30 md:nset-auto md:left-0 md:bg-white md:shadow-lg md:p-4 md:w-48 md:text-sm md:space-y-2 md:mt-14">
@@ -72,7 +72,7 @@
 
 <div class="self-center ml-4 mt-1">
   <%= link_to new_project_path do %>
-    <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-primary-600 hover:bg-primary-500 focus:outline-none focus:shadow-outline-primary focus:border-primary-700 active:bg-primary-700 flex-shrink-0 flex-grow-0">
+    <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-primary-500 bg-white hover:bg-teal-500 hover:text-teal-50 focus:outline-none focus:shadow-outline-primary focus:border-primary-700 active:bg-primary-700 flex-shrink-0 flex-grow-0">
       <%= t('create_project') %>
     </button>
   <% end %>
