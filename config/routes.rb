@@ -10,6 +10,12 @@ Rails.application.routes.draw do
 
   get '/about', to: 'home#about', as: 'about'
 
+  get '/data/projects',   to: 'data#projects'
+  get '/data/users',      to: 'data#users'
+  get '/data/volunteers', to: 'data#volunteers'
+
+  get '/reports', to: "reports#index"
+
   get '/admin' => 'admin#index'
   get '/admin/edit' => 'admin#edit_site', as: 'edit_site'
   post '/admin/edit' => 'admin#edit_site'
