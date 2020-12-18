@@ -92,36 +92,42 @@ project_categories:
     project_types:
       - On-Site
     color: purple
+    image: on-site
   - name: Remote
     slug: remote
     body: Volunteer opportunities that can be performed remotely and safely from your home
     project_types:
       - Remote
     color: orange
+    image: remote
   - name: Driving
     slug: driving
     body: Volunteer opportunities that require a vehicle
     project_types:
       - Driving
     color: blue
+    image: driving
   - name: Mutual Aid
     slug: mutual-aid
     body: Neighbors helping neighbors
     project_types:
       - Mutual Aid
     color: blue
+    image: driving
   - name: Internships
     slug: internships
     body: Turn your love of helping others into a career
     project_types:
       - Internship
     color: blue
+    image: driving
   - name: Quick
     slug: quick
     body: Volunteer opportunities requiring less that 2 hours of your time
     project_types:
       - Quick
     color: blue
+    image: driving
 
 global_announcements:
 #  - title: Helpful resources for your projects
