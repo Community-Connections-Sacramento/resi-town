@@ -121,6 +121,7 @@ en:
   number_of_volunteers_needed: "Number of volunteers needed"
   volunteer_location: "Volunteer Location"
   choose_categories: "Choose Categories"
+  specify_location: "Please specify your project location, as well as any other categories that apply"
   do_volunteers_need_to_live_in_a_certain_location_w: "Do volunteers need to live in a certain location? Write remote otherwise."
   organization_status: "Organization status"
   the_u_s_department_of_labor_has_indicated_that_und: "The U.S. Department of Labor has indicated that, under the Fair Labor Standards Act, volunteers may not provide services to for-profit private sector employers."

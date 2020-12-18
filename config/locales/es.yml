@@ -115,6 +115,7 @@ es:
   number_of_volunteers_needed: "Número de habilidades necesitadas"
   volunteer_location: "Localidad de voluntario"
   choose_categories: "Elegir Categorías"
+  specify_location: "Especifique la ubicación de su proyecto, así como cualquier otra categoría que corresponda"
   do_volunteers_need_to_live_in_a_certain_location_w: "¿Hay que vivir los voluntarios en algun localidad? Indica remoto por lo demás."
   organization_status: "Estado de la organización"
   the_u_s_department_of_labor_has_indicated_that_und: "El Departamento del Trabajo de EE UU. ha indicado que, debajo del Fair Labor Standards Act, voluntarios no se pueden proporcionars servicios a corporaciones con fines de lucro."
