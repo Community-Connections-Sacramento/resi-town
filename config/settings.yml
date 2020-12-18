@@ -86,33 +86,41 @@ project_locations:
     slug: other
 
 project_categories:
-  - name: Medical
-    slug: medical
-    body: Support our overwhelmed health systems with medical innovation.
+  - name: On-Site
+    slug: on-site
+    body: In-person volunteer opportunities
     project_types:
-      - Scale testing
-      - Medical facilities
-      - Medical equipments
-      - Treatment R&D
+      - On-Site
     color: purple
-  - name: Prevention
-    slug: prevention
-    body: Inform, reduce, and control the spread of the outbreak.
+  - name: Remote
+    slug: remote
+    body: Volunteer opportunities that can be performed remotely and safely from your home
     project_types:
-      - Track the outbreak
-      - Reduce spread
+      - Remote
     color: orange
-  - name: Community
-    slug: community
-    body: Work together to help our stressed communities.
+  - name: Driving
+    slug: driving
+    body: Volunteer opportunities that require a vehicle
     project_types:
-      - E-Learning
-      - Job placement
-      - Mental health
-      - Help out communities
-      - Map volunteers to needs
-      - News and information
-      - Social giving
+      - Driving
+    color: blue
+  - name: Mutual Aid
+    slug: mutual-aid
+    body: Neighbors helping neighbors
+    project_types:
+      - Mutual Aid
+    color: blue
+  - name: Internships
+    slug: internships
+    body: Turn your love of helping others into a career
+    project_types:
+      - Internship
+    color: blue
+  - name: Quick
+    slug: quick
+    body: Volunteer opportunities requiring less that 2 hours of your time
+    project_types:
+      - Quick
     color: blue
 
 global_announcements:
