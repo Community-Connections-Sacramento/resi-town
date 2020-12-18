@@ -5,9 +5,9 @@ class AdminController < ApplicationController
 
   end
 
-  def edit_site
+  # def edit_site
 
-  end
+  # end
 
   def delete_user
     @user = User.find(params[:user_id])

@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   get '/data/users',      to: 'data#users'
   get '/data/volunteers', to: 'data#volunteers'
 
-  get '/reports', to: "reports#index"
+  # get '/reports', to: "reports#index"
 
-  get '/admin' => 'admin#index'
-  get '/admin/edit' => 'admin#edit_site', as: 'edit_site'
-  post '/admin/edit' => 'admin#edit_site'
+  get '/admin' => 'reports#index'
+  # get '/admin/edit' => 'admin#edit_site', as: 'edit_site'
+  # post '/admin/edit' => 'admin#edit_site'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_scope :user do

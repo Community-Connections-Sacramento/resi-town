@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   around_action :switch_locale
 
   def ensure_admin
-    redirect_to projects_path if !current_user || !current_user.is_admin?
+    redirect_to root_path if !current_user || !current_user.is_admin?
   end
 
   def set_filters_open
