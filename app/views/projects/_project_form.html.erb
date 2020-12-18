@@ -363,6 +363,36 @@
         </div>
       </div>
 
+      <div class="mt-6 sm:mt-5 is-accepting-volunteers">
+        <div class="sm:border-t sm:border-gray-200 sm:pt-5">
+          <fieldset>
+            <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-baseline">
+              <div>
+                <legend class="text-base leading-6 font-medium text-gray-900 sm:text-sm sm:leading-5 sm:text-gray-700">
+                  <%= t('choose_categories') %>
+                </legend>
+              </div>
+              <div class="mt-4 sm:mt-0 sm:col-span-2">
+                <div class="max-w-lg">
+                  <% Settings.project_categories.each do |category| %>
+                    <div class="relative flex items-start">
+                      <div class="absolute flex items-center h-5">
+                        <%= f.check_box :project_type_list, { multiple: true, class:  "form-checkbox h-4 w-4 text-primary-600 transition duration-150 ease-in-out"}, category.name, nil %>
+                      </div>
+                      <div class="pl-7 text-sm leading-5">
+                        <label for="project_type_list_<%= category.name.downcase.gsub(' & ', '__').gsub(' ', '_') %>" class="font-medium text-gray-700">
+                          <%= category.name %>
+                        </label>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
       <div class="mt-6 sm:mt-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
         <label for="start_date" class="block text-sm font-medium leading-5 text-gray-700 sm:mt-px sm:pt-2">
           Start Date<span class="text-red-500">*</span>
