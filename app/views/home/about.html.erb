@@ -65,20 +65,21 @@
           <% TEAM.each do |group, team| %>
             <% if !group.empty? %>
               <tr class="<%= cycle striped_classes_cycle %>">
-                <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-white text-center bg-primary-500">
+                <td colspan="3" class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-white text-center bg-primary-500">
                   <%= html_escape group %>
-                </td>
-                <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 text-center bg-primary-500">
                 </td>
               </tr>
             <% end %>
-            <% team.each do |name, role| %>
+            <% team.each do |name, role, desc| %>
               <tr class="<%= cycle striped_classes_cycle %>">
                 <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900 text-center">
                   <%= html_escape name %>
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 text-center">
                   <%= html_escape role %>
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 text-center">
+                  <%= html_escape desc %>
                 </td>
               </tr>
             <% end %>

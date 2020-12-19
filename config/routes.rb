@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get '/about', to: 'home#about', as: 'about'
+  get '/podcast', to: 'home#podcast', as: 'podcast'
 
   get '/data/projects',   to: 'data#projects'
   get '/data/users',      to: 'data#users'

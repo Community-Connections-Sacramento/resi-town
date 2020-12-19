@@ -32,6 +32,10 @@
   <% end %>
 <% end %>
 
+<%= link_to podcast_path, class: "#{podcast_nav_link_class(variant)}" do %>
+  <%= t('podcast') %>
+<% end %>
+
 <% if current_user %>
   <div class="relative group flex">
     <%= link_to 'javascript:void(0);', class: "#{nav_link_inactive_class(variant)} hidden md:flex" do %>

@@ -218,6 +218,7 @@ en:
   send_me_reset_password_instructions: "Send me reset password instructions"
   log_in: "Log in"
   sign_up: "Sign up"
+  podcast: "Podcast"
   didn_t_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
   didn_t_receive_unlock_instructions: "Didn't receive unlock instructions?"
   media_kit: "Media kit"
