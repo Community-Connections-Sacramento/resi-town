@@ -54,6 +54,13 @@
           <%= t('your_profile') %>
         <% end %>
       </div>
+      <% if current_user.is_admin?%>
+      <div>
+          <%= link_to admin_path, class: "#{admin_nav_link_class(variant)}" do %>
+            <%= t('dashboard') %>
+          <% end %>
+      </div>
+      <% end %>
       <div>
         <%= link_to destroy_user_session_path, method: :delete, class: "#{logout_nav_link_class(variant)}" do %>
           <%= t('log_out') %>

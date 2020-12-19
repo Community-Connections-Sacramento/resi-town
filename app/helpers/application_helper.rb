@@ -55,6 +55,10 @@ module ApplicationHelper
     params[:controller] == 'users/registrations' && [ 'edit', 'update' ].include?(params[:action]) ? sub_nav_link_active_class(variant) : sub_nav_link_inactive_class(variant)
   end
 
+  def admin_nav_link_class(variant = 'DESKTOP')
+    params[:controller] == 'admin' ? sub_nav_link_active_class(variant) : sub_nav_link_inactive_class(variant)
+  end
+
   def sign_up_nav_link_class(variant = 'DESKTOP')
     params[:controller] == 'users/registrations' && [ 'new' ].include?(params[:action]) ? nav_link_active_class(variant) : nav_link_inactive_class(variant)
   end
