@@ -8,8 +8,8 @@ share_image: https://www.helpwithcovid.com/share-image.png
 features_enabled:
   volunteer_directory: true
   resources: true
-  office_hours: true
-  success_stories: true
+  office_hours: false
+  success_stories: false
 
 # These are the skills that volunteers can have and projects can request.
 volunteer_skills:
@@ -26,17 +26,20 @@ volunteer_skills:
   - Food preparation
   - Funding
   - Helpdesk
-  - Healthcare
+  - Healthcare/Public Health
   - Legal
   - Manufacturing
   - Marketing
   - Medicine
   - Mechanics & Electronics
+  - Occupational Health
   - Operations
-  - PM
-  - QA
+  - Process Improvement
+  - Project Management
+  - Quality Assurance
   - Sales
   - Social Media
+  - Strategic Planning
   - Software
   - Training Development
   - Tutoring
@@ -80,10 +83,10 @@ max_volunteers_for_highlight_offer: 30
 project_locations:
   - name: Remote
     slug: remote
-  - name: Athens (On Site)
-    slug: onsite
-  - name : Other Georgia Locales
-    slug: other
+  - name: Sacramento (On Site)
+    slug: on-site
+  - name : Driving
+    slug: driving
 
 project_categories:
   - name: On-Site
@@ -107,9 +110,9 @@ project_categories:
       - Driving
     color: blue
     image: driving
-  - name: Mutual Aid
-    slug: mutual-aid
-    body: Neighbors helping neighbors
+  - name: Ongoing
+    slug: ongoing
+    body: Neighbors helping neighbors for periods of 2 weeks or more
     project_types:
       - Mutual Aid
     color: blue
@@ -121,11 +124,18 @@ project_categories:
       - Internship
     color: blue
     image: driving
-  - name: Quick
-    slug: quick
+  - name: One-time
+    slug: one-time
     body: Volunteer opportunities requiring less that 2 hours of your time
     project_types:
-      - Quick
+      - One-time
+    color: blue
+    image: driving
+  - name: Other
+    slug: other
+    body: Sharing events, news, social giving, and other information
+    project_types:
+      - One-time
     color: blue
     image: driving
 
