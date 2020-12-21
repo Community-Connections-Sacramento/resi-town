@@ -96,7 +96,8 @@ class ApplicationController < ActionController::Base
     end
 
     def hydrate_project_categories
-      @project_categories = Settings.project_categories && Settings.project_locations
+      @project_categories = Settings.project_categories
+      @project_locations = Settings.project_locations
 
       exclude_ids = []
       @project_categories.each do |category|
@@ -105,6 +106,13 @@ class ApplicationController < ActionController::Base
         exclude_ids << category[:featured_projects].map(&:id)
         #byebug
         category[:projects_count] = Rails.cache.fetch("project_category_#{category[:name].downcase}_projects_count", expires_in: 1.hour) { Project.tagged_with(category[:project_types], any: true, on: :project_types).count }
+      end
+      @project_locations.each do |location|
+        exclude_ids.flatten!
+        location[:featured_projects] = Rails.cache.fetch("project_location_#{location[:name].downcase}_featured_projects", expires_in: 1.hour) { Project.where(highlight: true).includes(:project_types, :skills, :categories, :volunteers).where.not(id: exclude_ids).tagged_with(location[:project_types], any: true, on: :project_types).limit(3).order('RANDOM()') }
+        exclude_ids << location[:featured_projects].map(&:id)
+        #byebug
+        location[:projects_count] = Rails.cache.fetch("project_location_#{location[:name].downcase}_projects_count", expires_in: 1.hour) { Project.tagged_with(location[:project_types], any: true, on: :project_types).count }
       end
     end
 

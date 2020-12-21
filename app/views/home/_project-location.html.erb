@@ -1,0 +1,21 @@
+<div class="mb-8">
+  <div class="flex mb-4 px-4 sm:px-0">
+    <div class="w-16 content-center"><%= inline_svg_pack_tag "media/svgs/location-#{location[:name].parameterize.downcase}.svg", class: 'text-primary-600' %></div>
+    <div class="w-full" style="padding-right: 3rem; padding-left: 1rem;">
+      <div><%= section_name location[:name] %></div>
+      <div class="w-full flex flex-col sm:flex-row justify-between flex-shrink-0">
+        <div class="flex-1">
+          <%= location[:body] %>
+        </div>
+        <%= link_to location[:slug], class: 'float-right text-primary-700 font-bold group' do %>
+          See all <%= location[:projects_count] %> <%= 'project'.pluralize location[:projects_count] %> <%= inline_svg_pack_tag 'media/svgs/chevron-right.svg', class: 'inline-block fill-current transform transition-transform duration-100 -translate-x-1 group-hover:translate-x-0' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!---
+  <%= list_cards do %>
+    <%= render partial: 'projects/project-card', collection: location[:featured_projects], locals: { location: location[:name] }, as: :project, cached: false %>
+  <% end %>
+  --->
+</div>
