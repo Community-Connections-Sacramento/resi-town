@@ -103,7 +103,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.new(project_params)
-    #byebug
+    @project.volunteer_location = @project.location_list[0]
     respond_to do |format|
       if @project.save
         track_event 'Project creation complete'

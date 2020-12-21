@@ -102,17 +102,17 @@ class ApplicationController < ActionController::Base
       exclude_ids = []
       @project_categories.each do |category|
         exclude_ids.flatten!
-        category[:featured_projects] = Rails.cache.fetch("project_category_#{category[:name].downcase}_featured_projects", expires_in: 1.hour) { Project.where(highlight: true).includes(:project_types, :skills, :categories, :volunteers).where.not(id: exclude_ids).tagged_with(category[:project_types], any: true, on: :project_types).limit(3).order('RANDOM()') }
+        category[:featured_projects] = Rails.cache.fetch("project_category_#{category[:name].downcase}_featured_projects", expires_in: 1.hour) { Project.where(highlight: true).includes(:project_types, :skills, :categories, :volunteers).where.not(id: exclude_ids).tagged_with(category[:name], any: true, on: :categories).limit(3).order('RANDOM()') }
         exclude_ids << category[:featured_projects].map(&:id)
         #byebug
-        category[:projects_count] = Rails.cache.fetch("project_category_#{category[:name].downcase}_projects_count", expires_in: 1.hour) { Project.tagged_with(category[:project_types], any: true, on: :project_types).count }
+        category[:projects_count] = Rails.cache.fetch("project_category_#{category[:name].downcase}_projects_count", expires_in: 1.hour) { Project.tagged_with(category[:name], any: true, on: :categories).count }
       end
       @project_locations.each do |location|
         exclude_ids.flatten!
-        location[:featured_projects] = Rails.cache.fetch("project_location_#{location[:name].downcase}_featured_projects", expires_in: 1.hour) { Project.where(highlight: true).includes(:project_types, :skills, :categories, :volunteers).where.not(id: exclude_ids).tagged_with(location[:project_types], any: true, on: :project_types).limit(3).order('RANDOM()') }
+        location[:featured_projects] = Rails.cache.fetch("project_location_#{location[:name].downcase}_featured_projects", expires_in: 1.hour) { Project.where(highlight: true).includes(:project_types, :skills, :categories, :volunteers).where.not(id: exclude_ids).tagged_with(location[:name], any: true, on: :locations).limit(3).order('RANDOM()') }
         exclude_ids << location[:featured_projects].map(&:id)
         #byebug
-        location[:projects_count] = Rails.cache.fetch("project_location_#{location[:name].downcase}_projects_count", expires_in: 1.hour) { Project.tagged_with(location[:project_types], any: true, on: :project_types).count }
+        location[:projects_count] = Rails.cache.fetch("project_location_#{location[:name].downcase}_projects_count", expires_in: 1.hour) { Project.tagged_with(location[:name], any: true, on: :locations).count }
       end
     end
 
