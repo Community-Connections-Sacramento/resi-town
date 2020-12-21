@@ -5,7 +5,8 @@
 <%= render partial: 'categories-nav' if is_projects_path %>
 
 <div class="container">
-  <%= render partial: 'category-info' if is_projects_path %>
+  <%= render partial: 'location-info' if is_projects_path && ['remote', 'driving', 'on-site'].include?(params[:category_slug]) %>
+  <%= render partial: 'category-info' if is_projects_path && ['remote', 'driving', 'on-site'].exclude?(params[:category_slug]) %>
   <%= render partial: 'filters-bar' if @show_filters %>
 
   <% if @projects.present? %>

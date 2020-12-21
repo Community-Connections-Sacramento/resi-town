@@ -1,12 +1,12 @@
 <%
-  @project_category ||= {
+  @project_location ||= {
     name: t('all_projects'),
     color: 'primary',
     image: 'all-categories',
   }
 
   # We need to explicitly write the full color instead of interpolating it so tailwind can later safely purge the unused css classes.
-  # case @project_category[:color]
+  # case @project_location[:color]
   # when 'primary'
   #   bg_color = 'bg-primary-600'
   # when 'cat-education'
@@ -26,13 +26,13 @@
   # end
 %>
 <div class="mx-auto w-max items-center justify-center content-center text-center mt-8">
-  <div class="w-max h-auto items-center content-center justify-center text-center flex"> <div class="w-screen h-96 bg-center bg-no-repeat bg-contain" style="background-image: url('<%= asset_path("/images/#{@project_category[:image].parameterize.downcase}.jpg") %>')"></div></div>
-  <div class="font-bold text-2xl mb-4 text-gray-700"><%= @project_category[:name] %></div>
-  <div class="mb-4 leading-tight text-gray-700"><%= @project_category[:body] %></div>
+  <div class="w-max h-auto items-center content-center justify-center text-center flex"> <div class="w-screen h-96 bg-center bg-no-repeat bg-contain" style="background-image: url('<%= asset_path("/images/#{@project_location[:image].parameterize.downcase}.jpg") %>')"></div></div>
+  <div class="font-bold text-2xl mb-4 text-gray-700"><%= @project_location[:name] %></div>
+  <div class="mb-4 leading-tight text-gray-700"><%= @project_location[:body] %></div>
 </div>
-<% if @project_category[:project_types].present? %>
+<% if @project_location[:project_types].present? %>
   <div class="w-full flex justify-center mb-8 flex-grow-0 flex-shrink-0 flex-wrap">
-    <% @project_category[:project_types].each do |type| %>
+    <% @project_location[:project_types].each do |type| %>
       <div class="inline-block m-1">
         <%= filter_badge label: type, model: 'projects', filter_by: :project_types, value: type %>
       </div>
