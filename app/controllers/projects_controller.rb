@@ -204,28 +204,28 @@ class ProjectsController < ApplicationController
 
       if params[:project_types].present?
         @applied_filters[:project_types] = params[:project_types]
-        @projects = @projects.search(params[:project_types]).left_joins(:volunteers).reorder(nil).group(:id)
+        @projects = @projects.tagged_with(params[:project_types]).left_joins(:volunteers).reorder(nil).group(:id)
       else
         @projects = @projects.left_joins(:volunteers).group(:id)
       end
 
       if params[:categories].present?
         @applied_filters[:categories] = params[:categories]
-        @projects = @projects.search(params[:categories]).left_joins(:volunteers).reorder(nil).group(:id)
+        @projects = @projects.tagged_with(params[:categories]).left_joins(:volunteers).reorder(nil).group(:id)
       else
         @projects = @projects.left_joins(:volunteers).group(:id)
       end
 
       if params[:locations].present?
         @applied_filters[:locations] = params[:locations]
-        @projects = @projects.search(params[:locations]).left_joins(:volunteers).reorder(nil).group(:id)
+        @projects = @projects.tagged_with(params[:locations]).left_joins(:volunteers).reorder(nil).group(:id)
       else
         @projects = @projects.left_joins(:volunteers).group(:id)
       end
 
       if params[:skills].present?
         @applied_filters[:skills] = params[:skills]
-        @projects = @projects.search(params[:skills]).left_joins(:volunteers).reorder(nil).group(:id)
+        @projects = @projects.tagged_with(params[:skills]).left_joins(:volunteers).reorder(nil).group(:id)
       else
         @projects = @projects.left_joins(:volunteers).group(:id)
       end

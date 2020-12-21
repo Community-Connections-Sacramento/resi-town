@@ -3,11 +3,19 @@
     <div class="flex flex-1 flex-col lg:flex-row items-center w-full lg:mr-4 mb-4 lg:mb-0">
       <div class="font-bold mb-2 lg:mb-0 mr-2"><%= t('filter_by') %></div>
       <div class="flex flex-col sm:flex-row w-full lg:w-auto">
-       <!--
+        
+        <div class="flex-1 lg:flex-none mb-2 w-full md:w-auto sm:mb-0 sm:mr-4 md:mb-0 sm:w-auto">
+          <%= filter_bar_filter 'Location', :locations, Settings.project_form_locations.map { |o| [o, o] } %>
+        </div>
+
+        <div class="flex-1 lg:flex-none mb-2 w-full md:w-auto sm:mb-0 sm:mr-4 md:mb-0 sm:w-auto">
+          <%= filter_bar_filter 'Category', :categories, Settings.project_form_categories.map { |o| [o, o] } %>
+        </div>
+        
         <div class="flex-1 lg:flex-none mb-2 w-full md:w-auto sm:mb-0 sm:mr-4 md:mb-0 sm:w-auto">
           <%= filter_bar_filter 'Project Types', :project_types, Settings.project_types.map { |o| [o, o] } %>
         </div>
-        -->
+
         <div class="flex-1 lg:flex-none mb-2 w-full md:w-auto sm:mb-0 sm:mr-4 md:mb-0 sm:w-auto">
           <%= filter_bar_filter 'Skills', :skills, Settings.volunteer_skills.map { |o| [o, o] } %>
         </div>

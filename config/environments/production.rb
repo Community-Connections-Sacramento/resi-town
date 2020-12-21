@@ -140,8 +140,8 @@ Rails.application.configure do
 
   Rails.application.config.middleware.use ExceptionNotification::Rack,
                                           email: {
-                                              email_prefix: '[HelpWithCovidNewHaven] ',
-                                              sender_address: %{"Help With Covid" #{ENV['SMTP_NOREPLY']}},
+                                              email_prefix: '[ResiTownSacramento] ',
+                                              sender_address: %{#{ENV['SMTP_NOREPLY']}},
                                               exception_recipients: [ENV['SMTP_USERNAME']]
                                           }
 
