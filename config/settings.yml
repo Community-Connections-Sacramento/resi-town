@@ -87,11 +87,6 @@ organization_statuses:
 max_volunteers_for_highlight_offer: 30
 
 project_locations:
-  - Remote
-  - On-Site
-  - Driving
-
-project_categories:
   - name: On-Site
     slug: on-site
     body: In-person volunteer opportunities
@@ -124,6 +119,8 @@ project_categories:
       - Driving
     color: blue
     image: driving
+
+project_categories:
   - name: Ongoing
     slug: ongoing
     body: Neighbors helping neighbors for periods of 2 weeks or more
