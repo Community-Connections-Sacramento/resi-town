@@ -87,12 +87,9 @@ organization_statuses:
 max_volunteers_for_highlight_offer: 30
 
 project_locations:
-  - name: Remote
-    slug: remote
-  - name: Sacramento (On Site)
-    slug: on-site
-  - name : Driving
-    slug: driving
+  - Remote
+  - On-Site
+  - Driving
 
 project_categories:
   - name: On-Site
