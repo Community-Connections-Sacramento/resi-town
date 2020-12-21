@@ -44,7 +44,7 @@ module ApplicationHelper
   end
 
   def podcast_nav_link_class(variant = 'DESKTOP')
-    params[:controller] == 'projects' && params[:action] == 'index' ? nav_link_active_class(variant) : nav_link_inactive_class(variant)
+    params[:controller] == 'home' && params[:action] == 'podcast' ? nav_link_active_class(variant) : nav_link_inactive_class(variant)
   end
 
   def volunteered_projects_nav_link_class(variant = 'DESKTOP')

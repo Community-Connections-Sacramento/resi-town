@@ -26,15 +26,7 @@ class ProjectsController < ApplicationController
         @featured_projects = Rails.cache.read "project_category_#{@project_category[:name].downcase}_featured_projects"
         #byebug
       end
-    # if request.path != projects_path and params[:location_slug].present?
-    #   @project_location = Settings.project_locations.find { |location| location.slug == params[:location_slug] }
-    #   #byebug
-    #   raise ActionController::RoutingError, 'Not Found' if @project_location.blank?
-
-    #   if @project_location.present?
-    #     @applied_filters[:project_types] = @project_location[:project_types]
-    #     @featured_projects = Rails.cache.read "project_location_#{@project_location[:name].downcase}_featured_projects"
-    #   end
+    
     else
       @featured_projects = Project.get_featured_projects
     end
@@ -168,7 +160,7 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.fetch(:project, {}).permit(:name, :organization, :organization_mission, :organization_registered, :level_of_urgency, :level_of_exposure, :description, :participants, :looking_for, :contact, :volunteer_location, :links, :start_date, :end_date, :end_date_recurring, :compensation, :background_screening_required, :progress, :docs_and_demo, :number_of_volunteers, :was_helpful, :exit_comments, :visible, :skill_list => [], project_type_list: [], :vol_list => [])
+      params.fetch(:project, {}).permit(:name, :organization, :organization_mission, :organization_registered, :level_of_urgency, :level_of_exposure, :description, :participants, :looking_for, :contact, :volunteer_location, :links, :start_date, :end_date, :end_date_recurring, :compensation, :background_screening_required, :progress, :docs_and_demo, :number_of_volunteers, :was_helpful, :exit_comments, :visible, :skill_list => [], :category_list => [], :project_type_list => [], :vol_list => [])
     end
 
     def ensure_owner_or_admin
@@ -184,6 +176,7 @@ class ProjectsController < ApplicationController
       @projects = Project
       @projects = @projects.tagged_with(params[:skills], any: true, on: :skills) if params[:skills].present?
       @projects = @projects.tagged_with(params[:project_types], any: true, on: :project_types) if params[:project_types].present?
+      @projects = @projects.tagged_with(params[:categories], any: true, on: :categories) if params[:categories].present?
       @projects = @projects.where(accepting_volunteers: params[:accepting_volunteers] == '1') if params[:accepting_volunteers].present?
       @projects = @projects.where(highlight: true) if params[:highlight].present?
       @projects = @projects.where(target_country: params[:target_country]) if params[:target_country].present?
@@ -203,13 +196,26 @@ class ProjectsController < ApplicationController
 
       if params[:project_types].present?
         @applied_filters[:project_types] = params[:project_types]
+        @projects = @projects.search(params[:project_types]).left_joins(:volunteers).reorder(nil).group(:id)
+      else
+        @projects = @projects.left_joins(:volunteers).group(:id)
+      end
+
+      if params[:categories].present?
+        @applied_filters[:categories] = params[:categories]
+        @projects = @projects.search(params[:categories]).left_joins(:volunteers).reorder(nil).group(:id)
+      else
+        @projects = @projects.left_joins(:volunteers).group(:id)
       end
 
       if params[:skills].present?
         @applied_filters[:skills] = params[:skills]
+        @projects = @projects.search(params[:skills]).left_joins(:volunteers).reorder(nil).group(:id)
+      else
+        @projects = @projects.left_joins(:volunteers).group(:id)
       end
 
-      @projects = @projects.includes(:project_types, :skills, :volunteers)
+      @projects = @projects.includes(:project_types, :skills, :categories, :volunteers)
     end
 
     def ensure_no_legacy_filtering
@@ -221,6 +227,10 @@ class ProjectsController < ApplicationController
 
       if params[:project_types].present? and params[:project_types].include? ','
         new_params[:project_types] = params[:project_types].split(',')
+      end
+
+      if params[:categories].present? and params[:categories].include? ','
+        new_params[:categories] = params[:categories].split(',')
       end
 
       return redirect_to projects_path(new_params) if new_params.present?

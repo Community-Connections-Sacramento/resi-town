@@ -61,8 +61,14 @@ volunteers_needed_for_project:
   - '100+'
 
 project_types:
-  - 'Black Businesses'
-  - 'Non-profit volunteering'
+  - News and Information
+  - Social Giving
+  - E-Learning
+  - Map Volunteers To Needs
+  - Job Placement
+  - Mental Health
+  - Help Out Communities
+  - Other
 
 project_statuses:
   - 'Just started'
@@ -93,6 +99,9 @@ project_categories:
     slug: on-site
     body: In-person volunteer opportunities
     project_types:
+      - Job Placement
+      - Mental Health
+      - Help Out Communities
       - On-Site
     color: purple
     image: on-site
@@ -100,13 +109,21 @@ project_categories:
     slug: remote
     body: Volunteer opportunities that can be performed remotely and safely from your home
     project_types:
-      - Remote
+      - E-Learning
+      - Map Volunteers To Needs
+      - Job Placement
+      - Mental Health
+      - Help Out Communities
+      - Remote      
     color: orange
     image: remote
   - name: Driving
     slug: driving
     body: Volunteer opportunities that require a vehicle
     project_types:
+      - Job Placement
+      - Mental Health
+      - Help Out Communities
       - Driving
     color: blue
     image: driving
@@ -114,28 +131,47 @@ project_categories:
     slug: ongoing
     body: Neighbors helping neighbors for periods of 2 weeks or more
     project_types:
-      - Mutual Aid
+      - Job Placement
+      - Mental Health
+      - Help Out Communities
+      - Map Volunteers To Needs
+      - Ongoing
     color: blue
     image: driving
   - name: Internships
     slug: internships
     body: Turn your love of helping others into a career
     project_types:
+      - E-Learning
+      - Map Volunteers To Needs
+      - Job Placement
+      - Mental Health
+      - Help Out Communities
       - Internship
     color: blue
     image: driving
-  - name: One-time
+  - name: One-Time
     slug: one-time
     body: Volunteer opportunities requiring less that 2 hours of your time
     project_types:
-      - One-time
+      - Job Placement
+      - Mental Health
+      - Help Out Communities
+      - One-Time
     color: blue
     image: driving
   - name: Other
     slug: other
     body: Sharing events, news, social giving, and other information
     project_types:
-      - One-time
+      - News and Information
+      - Social Giving
+      - E-Learning
+      - Map Volunteers To Needs
+      - Job Placement
+      - Mental Health
+      - Help Out Communities
+      - Other
     color: blue
     image: driving
 
