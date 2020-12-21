@@ -1,6 +1,12 @@
 <div class="-mt-6 pb-4 w-full flex flex-col sm:flex-row justify-center border-b border-gray-200">
   <div class="w-full sm:w-auto mx-auto sm:mx-0 overflow-x-auto scrolling-touch scrollbar-hidden sm:overflow-x-auto">
     <div class="flex flex-row flex-no-wrap h-full">
+     <% Settings.project_locations.each do |location| %>
+        <span class="submenu-item <%= "submenu-item-active" if @project_location.present? and @project_location.slug == location[:slug] %>">
+          <%= link_to location.name, "/#{location.slug}" %>
+        </span>
+        <% is_category = false %>
+      <% end %>
       <% Settings.project_categories.each do |category| %>
         <span class="submenu-item <%= "submenu-item-active" if @project_category.present? and @project_category.slug == category[:slug] %>">
           <%= link_to category.name, "/#{category.slug}" %>
