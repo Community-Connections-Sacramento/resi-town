@@ -86,6 +86,17 @@ organization_statuses:
 # it can ask to be highlighted.
 max_volunteers_for_highlight_offer: 30
 
+project_form_locations:
+  - On-Site
+  - Remote
+  - Driving
+
+project_form_categories:
+  - Ongoing
+  - Internships
+  - One-Time
+  - Other
+  
 project_locations:
   - name: On-Site
     slug: on-site

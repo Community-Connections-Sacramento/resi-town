@@ -61,11 +61,11 @@
 
 
 <div class="container">
-  <% cache @project_categories do %>
-    <%= render partial: 'project-category', collection: @project_categories, as: :category %>
-  <% end %>
   <% cache @project_locations do %>
     <%= render partial: 'project-location', collection: @project_locations, as: :location %>
+  <% end %>
+  <% cache @project_categories do %>
+    <%= render partial: 'project-category', collection: @project_categories, as: :category %>
   <% end %>
 </div>
 

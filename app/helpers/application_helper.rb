@@ -196,7 +196,7 @@ module ApplicationHelper
   end
 
   def sort_drop_down_option(path, title, sort_by = nil)
-    new_params = params.permit(:sort_by, :skills, :project_types).dup
+    new_params = params.permit(:sort_by, :skills, :project_types, :categories, :locations).dup
 
     case params[:sort_by]
     when sort_by

@@ -103,7 +103,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.new(project_params)
-
+    #byebug
     respond_to do |format|
       if @project.save
         track_event 'Project creation complete'
@@ -184,7 +184,7 @@ class ProjectsController < ApplicationController
       @projects = @projects.tagged_with(params[:skills], any: true, on: :skills) if params[:skills].present?
       @projects = @projects.tagged_with(params[:project_types], any: true, on: :project_types) if params[:project_types].present?
       @projects = @projects.tagged_with(params[:categories], any: true, on: :categories) if params[:categories].present?
-      @projects = @projects.tagged_with(params[:locations], any: true, on: :categories) if params[:locations].present?
+      @projects = @projects.tagged_with(params[:locations], any: true, on: :locations) if params[:locations].present?
       @projects = @projects.where(accepting_volunteers: params[:accepting_volunteers] == '1') if params[:accepting_volunteers].present?
       @projects = @projects.where(highlight: true) if params[:highlight].present?
       @projects = @projects.where(target_country: params[:target_country]) if params[:target_country].present?
