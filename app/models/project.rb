@@ -13,6 +13,7 @@ class Project < ApplicationRecord
   acts_as_taggable_on :skills
   acts_as_taggable_on :categories
   acts_as_taggable_on :project_types
+  acts_as_taggable_on :locations
 
   pg_search_scope :search, against: %i(name description participants looking_for volunteer_location target_country target_location highlight)
 
@@ -75,7 +76,7 @@ class Project < ApplicationRecord
         :status,
         :short_description
       ],
-      methods: [:to_param, :volunteered_users_count, :project_type_list, :category_list, :skill_list]
+      methods: [:to_param, :volunteered_users_count, :project_type_list, :location_list, :category_list, :skill_list]
     )
   end
 
@@ -110,6 +111,6 @@ class Project < ApplicationRecord
 
   def self.get_featured_projects
     projects_count = Settings.homepage_featured_projects_count
-    Project.where(highlight: true).includes(:project_types, :categories, :skills, :volunteers).limit(projects_count).order('RANDOM()')
+    Project.where(highlight: true).includes(:project_types, :categories, :locations, :skills, :volunteers).limit(projects_count).order('RANDOM()')
   end
 end
