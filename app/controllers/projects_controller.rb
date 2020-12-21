@@ -27,6 +27,12 @@ class ProjectsController < ApplicationController
         @featured_projects = Rails.cache.read "project_category_#{@project_category[:name].downcase}_featured_projects"
         #byebug
       end
+
+      if @project_location.present?
+        @applied_filters[:project_types] = @project_location[:project_types]
+        @featured_projects = Rails.cache.read "project_category_#{@project_location[:name].downcase}_featured_projects"
+        #byebug
+      end
     
     else
       @featured_projects = Project.get_featured_projects
