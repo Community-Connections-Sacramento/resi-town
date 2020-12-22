@@ -21,7 +21,7 @@
       </div>
     <% end %>
 
-    <div class="relative grid grid-cols-3 gap-2 text-sm mt-3">
+    <div class="relative grid grid-cols-4 gap-2 text-sm mt-3">
       <% total_volunteers = project.volunteers.count %>
       <% if total_volunteers > 0 %>
         <div class="font-bold"><%= total_volunteers %> <%= 'volunteer'.pluralize total_volunteers %></div>
@@ -30,9 +30,23 @@
       <% end %>
 
       <div class="text-gray-500 w-full text-center"><%= time_ago_in_words project.created_at %> ago</div>
+      
+      <div class="text-gray-500 w-full text-center">
+      <span class="text-gray-900 font-bold">Category:</span>
+      <% if project.categories.present? %>
+            <% project.categories.each do |cat| %>
+              <span><%= cat %></span>
+            <% end %>
+      <% else %>
+        <span>None</span>
+    <% end %>
+      </div>
+
 
       <% if project.volunteer_location? %>
         <div class="text-right"><%= inline_svg_pack_tag 'media/svgs/project-card-location.svg', class: 'inline' %><%= project.volunteer_location %></div>
+      <% else %>
+        <div class="text-right"><%= inline_svg_pack_tag 'media/svgs/project-card-location.svg', class: 'inline' %>Not Specified</div>
       <% end %>
     </div>
   </div>
