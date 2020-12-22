@@ -86,7 +86,7 @@ es:
   describe_your_project: "Describe tu proyecto."
   write_a_few_sentences_about_what_you_are_making_an: "Escribe algunas frases sobreq lo que haces y el objetivo final."
   image: "Imagen"
-  project_type: "Tipo de proyecto"
+  project_type: "Tipo(s) de proyecto"
   for_profit_type: "Tipo de organización"
   project_status: "Estado de proyecto"
   who_is_already_working_on_this: "¿Quién ya está trabajando en esto?"

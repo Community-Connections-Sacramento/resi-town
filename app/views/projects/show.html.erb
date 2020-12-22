@@ -166,9 +166,9 @@
           <% if @project.description? %>
             <%= simple_format Rinku.auto_link(sanitize(@project.short_description), :all, 'class="text-primary-500" rel="nofollow noopener noreferrer"'), { class: 'mb-5 mt-3 text-sm' }, sanitize: false %>
           <% end %>
-          <% if @project.project_type_list.present? %>
+          <% if @project.categories.present? %>
             <div class="mt-5 text-sm leading-5 text-gray-900 flex content-center flex-wrap space-y-bottom-2 space-x-right-2">
-              <%= skill_badges @project.project_type_list, model: 'projects', filter_by: 'project_types' %>
+              <%= skill_badges @project.category_list, model: 'projects', filter_by: 'categories' %>
             </div>
           <% end %>
           <div class="mt-4 flex flex-col lg:flex-row lg:justify-between">
@@ -227,13 +227,13 @@
             </div>
           <% end %>
 
-          <% if @project.categories.present? %>
+          <% if @project.project_types.present? %>
             <div class="p-4 sm:px-6 sm:pt-4 sm:pb-2">
               <dt class="text-sm leading-5 font-bold text-gray-800">
-                <%= t('categories') %>:
+                <%= t('project_type') %>:
               </dt>
               <dd class="mt-2 text-sm leading-5 text-gray-600">
-                  <%= skill_badges @project.category_list, color: 'blue', model: 'projects', filter_by: 'categories' %>
+                  <%= skill_badges @project.project_type_list, color: 'blue', model: 'projects', filter_by: 'project_types' %>
               </dd>    
             </div>
           <% end %>
