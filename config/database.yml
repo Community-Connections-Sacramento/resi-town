@@ -11,7 +11,7 @@ default: &default
 
 development:
   <<: *default
-  database: covid_development
+  database: covid-development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,4 +23,4 @@ test:
 
 production:
   <<: *default
-  database: covid_production
+  database: covid-production
