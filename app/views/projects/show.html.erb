@@ -227,6 +227,17 @@
             </div>
           <% end %>
 
+          <% if @project.categories.present? %>
+            <div class="p-4 sm:px-6 sm:pt-4 sm:pb-2">
+              <dt class="text-sm leading-5 font-bold text-gray-800">
+                <%= t('categories') %>:
+              </dt>
+              <dd class="mt-2 text-sm leading-5 text-gray-600">
+                  <%= skill_badges @project.category_list, color: 'blue', model: 'projects', filter_by: 'categories' %>
+              </dd>    
+            </div>
+          <% end %>
+
           <% if @project.target_location.present? %>
             <div class="p-4 sm:px-6 sm:pt-4 sm:pb-2">
               <dt class="text-sm leading-5 font-bold text-gray-800">

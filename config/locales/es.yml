@@ -116,6 +116,7 @@ es:
   number_of_volunteers_needed: "Número de habilidades necesitadas"
   volunteer_location: "Localidad de voluntario"
   category: "Categoría"
+  categories: "Categorías"
   specify_location: "Especifique la ubicación de su proyecto, así como cualquier otra categoría que corresponda"
   do_volunteers_need_to_live_in_a_certain_location_w: "¿Hay que vivir los voluntarios en algun localidad? Indica remoto por lo demás."
   organization_status: "Estado de la organización"

@@ -122,6 +122,7 @@ en:
   number_of_volunteers_needed: "Number of volunteers needed"
   volunteer_location: "Volunteer Location"
   category: "Category"
+  categories: "Categories"
   specify_location: "Please specify your project location, as well as any other categories that apply"
   do_volunteers_need_to_live_in_a_certain_location_w: "Do volunteers need to live in a certain location? Write remote otherwise."
   organization_status: "Organization status"
