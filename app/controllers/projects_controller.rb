@@ -25,12 +25,14 @@ class ProjectsController < ApplicationController
       if @project_category.present?
         @applied_filters[:project_types] = @project_category[:project_types]
         @featured_projects = Rails.cache.read "project_category_#{@project_category[:name].downcase}_featured_projects"
+        @projects = @projects.tagged_with(params[:category_slug], any: true, on: :categories) if params[:category_slug].present?
         #byebug
       end
 
       if @project_location.present?
         @applied_filters[:project_types] = @project_location[:project_types]
         @featured_projects = Rails.cache.read "project_category_#{@project_location[:name].downcase}_featured_projects"
+        @projects = @projects.tagged_with(params[:category_slug], any: true, on: :locations) if params[:category_slug].present?
         #byebug
       end
     
