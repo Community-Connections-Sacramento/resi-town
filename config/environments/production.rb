@@ -74,15 +74,15 @@ Rails.application.configure do
   # so the no-reply@newhavenhelpwithcovid.com account won't actually be used.
   # The commented out lines below might be on the right track to fix this, but
   # it's completely untested.
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      address: 'smtp.gmail.com',
-      port: 587,
-      user_name: ENV['SMTP_USERNAME'],
-      password: ENV['SMTP_PASSWORD'],
-      authentication: :plain,
-      enable_starttls_auto: true
-  }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #     address: 'smtp.gmail.com',
+  #     port: 587,
+  #     user_name: Rails.application.credentials.smtp[:SMTP_USERNAME],
+  #     password: Rails.application.credentials.smtp[:SMTP_PASSWORD],
+  #     authentication: :plain,
+  #     enable_starttls_auto: true
+  # }
 
   #config.action_mailer.delivery_method = :smtp
   #config.action_mailer.smtp_settings = {
@@ -138,11 +138,11 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-                                          email: {
-                                              email_prefix: '[ResiTownSacramento] ',
-                                              sender_address: %{#{ENV['SMTP_NOREPLY']}},
-                                              exception_recipients: [ENV['SMTP_USERNAME']]
-                                          }
+  # Rails.application.config.middleware.use ExceptionNotification::Rack,
+  #                                         email: {
+  #                                             email_prefix: '[ResiTownSacramento] ',
+  #                                             sender_address: %{#{ENV['SMTP_NOREPLY']}},
+  #                                             exception_recipients: [ENV['SMTP_USERNAME']]
+  #                                         }
 
   end
