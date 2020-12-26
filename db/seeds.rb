@@ -8,17 +8,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# user = User.create!(
-#   email: 'user@gmail.com',
-#   name: 'Bob Smith',
-#   password: 'password',
-#   password_confirmation: 'password',
-#   about: 'about section',
-#   location: 'location section',
-#   profile_links: 'github.com',
-#   visibility: true,
-#   level_of_availability: '2-4 hours a day'
-# )
+user = User.create!(
+  email: 'user@gmail.com',
+  name: 'Bob Smith',
+  password: 'password',
+  password_confirmation: 'password',
+  about: 'about section',
+  location: 'location section',
+  profile_links: 'github.com',
+  visibility: true,
+  level_of_availability: '2-4 hours a day'
+)
 
 # user2 = User.create!(
 #   email: 'user2@gmail.com',
@@ -38,15 +38,15 @@
 # user6 = User.create!(email: 'user6@gmail.com', name: 'jamiew', password: 'password', password_confirmation: 'password')
 
 # PROJECTS
-# project1 = user.projects.create(
-#   status: Settings.project_statuses.shuffle.first,
-#   name: 'Act Now Foundation - Import & distribution of 10-minute at home COVID-19 test kits',
-#   target_location: 'USA',
-#   volunteer_location: 'Anywhere',
-#   description: 'A cool description',
-#   accepting_volunteers: true,
-#   highlight: true)
-# project1.skill_list.add('Anything')
+project1 = user.projects.create(
+  status: Settings.project_statuses.shuffle.first,
+  name: 'Act Now Foundation - Import & distribution of 10-minute at home COVID-19 test kits',
+  target_location: 'USA',
+  volunteer_location: 'Anywhere',
+  description: 'A cool description',
+  accepting_volunteers: true,
+  highlight: true)
+project1.skill_list.add('Anything')
 # project1.volunteered_users << user3
 # project1.save! # FIXME is this necessary? We were modifying associations
 
