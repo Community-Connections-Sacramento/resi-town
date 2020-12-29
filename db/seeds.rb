@@ -16,7 +16,7 @@ user = User.create!(
   about: 'about section',
   location: 'location section',
   profile_links: 'github.com',
-  visibility: true,
+  visibility: false,
   level_of_availability: '2-4 hours a day'
 )
 
