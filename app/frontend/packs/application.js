@@ -19,15 +19,16 @@ let themeImages = null;
 
 try {
   themeImages = require.context('../../../theme/assets/images', true)
-} catch (err) {}
+} catch (err) { }
 const imagePath = (name) => (themeImages ? (themeImages(name, true) || images(name, true)) : images(name, true))
 
 const svgs = require.context('../svgs', true)
 let themeSvgs = null;
+let variable = null;
 
 try {
   themeSvgs = require.context('../../../theme/assets/svgs', true)
-} catch (err) {}
+} catch (err) { }
 const svgPath = (name) => (themeSvgs ? (themeSvgs(name, true) || svgs(name, true)) : svgs(name, true))
 
 // Append the theme version.
@@ -40,7 +41,7 @@ $.fancybox.defaults.infobar = false
 $.fancybox.defaults.toolbar = false
 $.fancybox.defaults.hash = false
 
-document.addEventListener("turbolinks:before-cache", function() {
+document.addEventListener("turbolinks:before-cache", function () {
   $('.js-remove-before-navigation').remove()
 })
 
