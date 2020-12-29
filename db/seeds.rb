@@ -45,7 +45,7 @@ project1 = user.projects.create(
   volunteer_location: 'Anywhere',
   description: 'A cool description',
   accepting_volunteers: true,
-  highlight: true)
+  highlight: false)
 project1.skill_list.add('Anything')
 # project1.volunteered_users << user3
 # project1.save! # FIXME is this necessary? We were modifying associations
