@@ -7,7 +7,7 @@ share_image: https://www.helpwithcovid.com/share-image.png
 # Site features
 features_enabled:
   volunteer_directory: true
-  resources: true
+  resources: false
   office_hours: false
   success_stories: false
 
