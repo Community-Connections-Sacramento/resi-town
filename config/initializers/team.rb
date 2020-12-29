@@ -10,10 +10,10 @@ TEAM = {
         ['Ellen Chan', 'Director of Communications', 'No description provided.'],
     ],
     'Student Ambassador Team': [
-        ['Alyssa Rodriguez', 'Public Health student at Sacramento State University.', ''],
-        ['Kira Crawley', 'Public Health student at Sacramento State University.', ''],
-        ['Sana Sheikh', 'Occupational Health student at Sacramento State University.', ''],
-        ['Vy Cao', 'Occupational Health student at Sacramento State University.', ''],
+        ['Alyssa Rodriguez', 'Public Health student at Sacramento State University.', 'No description provided.'],
+        ['Kira Crawley', 'Public Health student at Sacramento State University.', 'No description provided.'],
+        ['Sana Sheikh', 'Occupational Health student at Sacramento State University.', 'No description provided.'],
+        ['Vy Cao', 'Occupational Health student at Sacramento State University.', 'No description provided.'],
     ],
     'City Help + ResiTown Sacramento Development Team': [
         ['Camden Rogers', 'Platform Manager and Lead Developer', 'Lead Web Developer for City Help and founder of Athens Help With Covid'],
