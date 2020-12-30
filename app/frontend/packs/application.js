@@ -24,7 +24,7 @@ const imagePath = (name) => (themeImages ? (themeImages(name, true) || images(na
 
 const svgs = require.context('../svgs', true)
 let themeSvgs = null;
-let variable = null;
+// let variable = null;
 
 try {
   themeSvgs = require.context('../../../theme/assets/svgs', true)
