@@ -17,9 +17,6 @@
 <%= render partial: 'partials/events' %>
 
 <%= render partial: 'resources-links', locals: { title: t('funding_volunteers_research_resources'), resources: Settings.funding_resources, html_id: 'resource_funding' } %>
-
-<%= render partial: 'partner-resources' %>
-
 <section class="resource-section" id="resource_deals">
   <div class="container mb-8">
     <div class="px-4 sm:px-0 mt-10 mb-3 font-bold text-center">
@@ -42,6 +39,8 @@
   </div>
 
   <%= render partial: 'offers' %>
-
+  <%= render partial: 'partner-resources' %>
+<!---
   <%= render partial: 'media-kit' %>
+  --->
 </section>
