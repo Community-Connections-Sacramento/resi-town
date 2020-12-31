@@ -7,13 +7,13 @@ TEAM = {
         ['Jessica Lin', 'Director of Community Engagement', 'Health equity champion with an extensive background in global health.'],
         ['Miriam Sanchez', 'Director of Operations', 'MPH student at CSU Northridge with a background in nutrition and holistic health.'],
         ['Jin Tran', 'Director of Policy and Planning', 'A social worker passionate about civic engagement and social impact- two areas she has scaled operations for at Facebook.'],
-        ['Ellen Chan', 'Director of Communications', 'Lead of digital marketing at the Federal Reserve Bank of San Francisco. She has produced multiple award-winning podcasts, including Zip Code Economies, Twice Around, and Does College Matter?'],
+        ['Ellen Chan', 'Director of Communications', 'Lead of digital marketing at the Federal Reserve Bank of San Francisco. Producer of the podcasts Zip Code Economies, Twice Around, and Does College Matter?'],
     ],
     'Student Ambassador Team': [
-        ['Alyssa Rodriguez', 'Public Health student at Sacramento State University.', 'No description provided.'],
-        ['Kira Crawley', 'Public Health student at Sacramento State University.', 'No description provided.'],
-        ['Sana Sheikh', 'Occupational Health student at Sacramento State University.', 'No description provided.'],
-        ['Vy Cao', 'Occupational Health student at Sacramento State University.', 'No description provided.'],
+        ['Alyssa Rodriguez', 'Student Ambassador', 'Public Health student at Sacramento State University.'],
+        ['Kira Crawley', 'Student Ambassador', 'Public Health student at Sacramento State University.'],
+        ['Sana Sheikh', 'Student Ambassador', 'Occupational Health student at Sacramento State University.'],
+        ['Vy Cao', 'Student Ambassador', 'Occupational Health student at Sacramento State University.'],
     ],
     'City Help + ResiTown Sacramento Development Team': [
         ['Camden Rogers', 'Platform Manager and Lead Developer', 'Lead Web Developer for City Help and founder of Athens Help With Covid'],
