@@ -12,6 +12,7 @@ PRIMARY_COLOR = 'red'
 HOME_HEADER = "ResiTown #{CITY_NAME} by Community Connections"
 HOME_SUBHEADER = "This is a #{CITY_NAME}-wide partnership platform, where #{CITY_NAME} residents can volunteer (in-person or remotely) and local non-profits and government can post volunteer needs. Let us unite and fight the pandemic together!"
 INSTAGRAM_LINK = 'https://www.instagram.com/'
+LINKEDIN_LINK = 'https://www.linkedin.com/company/community-connections-sacramento'
 FACEBOOK_LINK = 'https://www.facebook.com/Resitown/'
 TWITTER_LINK = 'http://twitter.com/_Resitown'
 NEWSLETTER_LINK = 'https://landing.mailerlite.com/webforms/landing/p8i0f4 '
