@@ -7,7 +7,7 @@ TEAM = {
         ['Jessica Lin', 'Director of Community Engagement', 'Health equity champion with an extensive background in global health.'],
         ['Miriam Sanchez', 'Director of Operations', 'MPH student at CSU Northridge with a background in nutrition and holistic health.'],
         ['Jin Tran', 'Director of Policy and Planning', 'A social worker passionate about civic engagement and social impact- two areas she has scaled operations for at Facebook.'],
-        ['Ellen Chan', 'Director of Communications', 'Lead of digital marketing at the Federal Reserve Bank of San Francisco. Producer of the podcasts Zip Code Economies, Twice Around, and Does College Matter?'],
+        ['Ellen Chan', 'Director of Communications', 'Lead of digital marketing at the Federal Reserve Bank of San Francisco and podcast producer.'],
     ],
     'Student Ambassador Team': [
         ['Alyssa Rodriguez', 'Student Ambassador', 'Public Health student at Sacramento State University.'],
