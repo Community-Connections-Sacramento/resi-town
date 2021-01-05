@@ -137,7 +137,6 @@ project_categories:
       - Mental Health
       - Help Out Communities
       - Map Volunteers To Needs
-      - Ongoing
     color: blue
     image: driving
   - name: Internships
@@ -149,7 +148,6 @@ project_categories:
       - Job Placement
       - Mental Health
       - Help Out Communities
-      - Internship
     color: blue
     image: driving
   - name: One-Time
@@ -159,7 +157,6 @@ project_categories:
       - Job Placement
       - Mental Health
       - Help Out Communities
-      - One-Time
     color: blue
     image: driving
   - name: Other
@@ -173,7 +170,6 @@ project_categories:
       - Job Placement
       - Mental Health
       - Help Out Communities
-      - Other
     color: blue
     image: driving
 
