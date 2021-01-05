@@ -105,7 +105,6 @@ project_locations:
       - Job Placement
       - Mental Health
       - Help Out Communities
-      - On-Site
     color: purple
     image: on-site
   - name: Remote
@@ -117,7 +116,6 @@ project_locations:
       - Job Placement
       - Mental Health
       - Help Out Communities
-      - Remote      
     color: orange
     image: remote
   - name: Driving
@@ -127,7 +125,6 @@ project_locations:
       - Job Placement
       - Mental Health
       - Help Out Communities
-      - Driving
     color: blue
     image: driving
 
