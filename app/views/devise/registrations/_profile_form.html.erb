@@ -9,40 +9,6 @@
   </div>
 </div>
 
-<!---
-
-<div class="mt-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-gray-200 sm:px-6 sm:py-5" style="border-top-width:1px">
-  <div class="text-sm leading-5 text-gray-500">
-    <p class="font-medium">Training Status</p>
-    <button type="button" class="text-sm text-gray-500 hover:text-gray-800 hover:underline" id='what_is_this'>What is this?</button>
-    <div id="modal" class="modal">
-      <div class="modal-content border-b border-gray-200 sm:rounded-lg">
-        <div class="flex justify-between items-center mb-4">
-          <h3 class="text-lg leading-6 font-medium text-gray-900">
-            What does Training Status mean?</h3>
-          <span class="close">&times</span>
-        </div>
-        <p class="mb-4"><%= DOMAIN_NAME %> has partnered with the training platform Blank Slate to provide a simple way for volunteers to quickly get up to speed on how to have the highest impact possible in your work, especially in light of frequently changing guidelines and best practices connected to COVID-19.</p>
-        <p class="mb-4">To protect our volunteers and others you work with during this pandemic, we ask all our volunteers who’ve marked their current location as “on-site in <%= CITY_NAME %>” to use Blank Slate to receive training on City of <%= CITY_NAME %>’s latest volunteer safety guidelines, which will only take 2-3 minutes. After that, depending on what you need to learn for your volunteer work, Blank Slate will send one nudge per week to make sure these updates stay front of mind. Your training status will be indicated on your volunteer profile with a green check mark so that our local partners can recruit with peace of mind.</p>
-        <p class="mb-4">Please use <%= link_to "this link", "https://app.blankslatetechnologies.com/app/index.html#/signUp?app=covid19", class: 'text-primary-500', target: :_blank %> to sign up for a free Blank Slate account using the same email address you used for <%= DOMAIN_NAME %></p>
-        <p class="mb-4">If you have any questions or encounter any issues, please contact <%= mail_to HWC_EMAIL, nil, target: '_blank', class: 'text-primary-500' %>.</p>
-        <p>Your privacy is of the utmost importance to NewHavenHelpWithCovid, and our relationship with Blank Slate is predicated on maintaining that privacy. Please be assured that your information belongs to you and will never be sold to third parties.</p>
-      </div>
-    </div>
-  
-  </div>
-  
-  <dd class="mt-4 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-    <% if @user.finished_training? %>
-      <%= image_tag('check-mark.svg', :size => "30x20") %>
-    <% else %>
-      <%= image_tag('ex-mark.svg', :size => "30x20") %>
-    <% end %>
-    <p class="mt-4 text-sm text-gray-500">To protect our volunteers and others you work with during this pandemic, we ask all our volunteers who’ve marked their current location as “on-site in <%= CITY_NAME %>” to receive training on the City of <%= CITY_NAME %>’s latest volunteer safety guidelines using the free learning app Blank Slate, which will only take 2-3 minutes. After you've done so, your training status will have a green check mark.</p>
-    <p class="mt-2 text-sm text-gray-500">Please use <%= link_to "this link", "https://app.blankslatetechnologies.com/app/index.html#/signUp?app=covid19", class: 'text-primary-500', target: :_blank %> to sign up for a free Blank Slate account using the same email address you used for this platform.</p>
-  </dd>
-</div>
--->
 <div class="mt-6 sm:mt-5">
   <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
     <label for="name" class="block text-sm font-medium leading-5 text-gray-700 sm:mt-px sm:pt-2">
@@ -162,11 +128,11 @@
 
   <div class="mt-6 sm:mt-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
     <label for="profile_links" class="block text-sm font-medium leading-5 text-gray-700 sm:mt-px sm:pt-2">
-      <%= t('links_to_places_where_people_can_get_to_know_you_b') %>
+      <%= t('links_to_places_where_people_can_get_to_know_you_b') %><span class="text-red-500">*</span>
     </label>
     <div class="mt-1 sm:mt-0 sm:col-span-2">
       <div class="max-w-lg flex rounded-md shadow-sm">
-        <%= f.text_area "profile_links", rows: 3, class: "form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" %>
+        <%= f.text_area "profile_links", rows: 3, required: true, class: "form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" %>
       </div>
       <p class="mt-2 text-sm text-gray-500"><%= t('for_instance_your_ar_xiv_git_hub_linked_in_twitter') %></p>
     </div>
