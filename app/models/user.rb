@@ -109,30 +109,30 @@ class User < ApplicationRecord
   end
 
 # this function checks if this user has completed Blank Slate training
-  def finished_training?
-    uri = URI.parse(BLANK_SLATE_TRAINING_STATUS_URL)
-    request = Net::HTTP::Post.new(uri)
-    request.basic_auth(BLANK_SLATE_USERNAME, BLANK_SLATE_PASSWORD)
-    request.content_type = "application/json"
-    request.body = JSON.dump({
-                                 "email" => self.email
-                             })
+  # def finished_training?
+  #   uri = URI.parse(BLANK_SLATE_TRAINING_STATUS_URL)
+  #   request = Net::HTTP::Post.new(uri)
+  #   request.basic_auth(BLANK_SLATE_USERNAME, BLANK_SLATE_PASSWORD)
+  #   request.content_type = "application/json"
+  #   request.body = JSON.dump({
+  #                                "email" => self.email
+  #                            })
 
-    req_options = {
-        use_ssl: uri.scheme == "https",
-    }
+  #   req_options = {
+  #       use_ssl: uri.scheme == "https",
+  #   }
 
-    response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-      http.request(request)
-    end
+  #   response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+  #     http.request(request)
+  #   end
 
-    if response.code == "200"
-      result = JSON.parse(response.body)
-      result['finishedAllCards']
-    else
-      false
-    end
-  end
+  #   if response.code == "200"
+  #     result = JSON.parse(response.body)
+  #     result['finishedAllCards']
+  #   else
+  #     false
+  #   end
+  # end
 
   def age_consent?
     return self.age_consent
