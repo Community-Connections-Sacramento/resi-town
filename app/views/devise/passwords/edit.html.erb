@@ -1,30 +1,62 @@
-<div align="center" class="flex flex-col justify-center sm:px-6 lg:px-8">
 
-<div class="container" align="center">
-  <h2>Change your password</h2>
+<div class="flex flex-col justify-center sm:px-6 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+      Change Password
+    </h2>
+  </div>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <div class="mt-6 flex justify-center">
     <%= render "devise/shared/error_messages", resource: resource %>
     <%= f.hidden_field :reset_password_token %>
+  </div>
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+
 
     <div class="field">
       <%= f.label :password, "New password" %><br />
       <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em><br />
       <% end %>
-      <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+      <div class="mt-1 rounded-md shadow-sm">
+      <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" %>
+    </div>
     </div>
 
     <div class="field">
+          <div class="mt-6">
       <%= f.label :password_confirmation, "Confirm new password" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+          <div class="mt-1 rounded-md shadow-sm">
 
-    <div class="actions w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-500 focus:outline-none focus:border-primary-700 focus:shadow-outline-primary active:bg-primary-700 transition duration-150 ease-in-out">
-      <%= f.submit "Change my password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" %>
     </div>
+    </div>
+  </div>
+
+    <div class="actions">
+      <div class="mt-6">
+        <%= f.submit "Change my password", class: "w-full flex justify-center py-2 px-4 cursor-pointer border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-500 focus:outline-none focus:border-primary-700 focus:shadow-outline-primary active:bg-primary-700 transition duration-150 ease-in-out" %>
+      </div>
+    </div>
+    <div class="mt-6">
+          <div class="relative">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center text-sm leading-5">
+              <span class="px-2 bg-white text-gray-500">
+                <%= t('or') %>
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-6 flex justify-center">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+  </div>
+  </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
-</div>
 </div>
