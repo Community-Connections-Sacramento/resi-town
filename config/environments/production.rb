@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "covid_volunteers_production"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'resi-town-tm6vk.ondigitalocean.app/', protocol: 'https' }
+  config.action_mailer.default_url_options = { host: 'resitown.com', protocol: 'https' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default :charset => "utf-8"
 
