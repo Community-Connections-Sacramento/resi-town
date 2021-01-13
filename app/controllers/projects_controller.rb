@@ -109,6 +109,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.save
         track_event 'Project creation complete'
+        ProjectMailer.with(project: @project).new_project.deliver_now
         format.html { redirect_to @project, notice: I18n.t('project_was_successfully_created') }
         format.json { render :show, status: :created, location: @project }
       else
