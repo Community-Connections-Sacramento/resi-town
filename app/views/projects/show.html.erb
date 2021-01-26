@@ -200,6 +200,17 @@
           </div>
         <% end %>
       </div>
+      <div class="sm:col-span-1 flex-col justify-between">
+        <% if (@project.volunteered_users.find(current_user.id)) %>
+        <div class="mt-10 flex flex-col float-right">
+             <div class="p-6 pt-3 pb-3 bg-white items-center text-gray-500">
+             <h2>Project Completed?</h2>
+              <%= inline_svg_pack_tag 'media/svgs/people.svg', class: 'h-12 pl-10 text-primary-600 fill-current' %>
+              <!--<span class="text-gray-500 text-xs font-bold leading-tight">testing project completed?</span>-->
+            </div>
+        </div>
+        <% end %>
+      </div>
     </div>
 
     <div class="mt-8 mx-4 sm:grid sm:grid-cols-3 sm:gap-10 sm:mx-0">

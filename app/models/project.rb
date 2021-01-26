@@ -85,6 +85,9 @@ class Project < ApplicationRecord
     errors.add(:base, 'You must select at least one skill') if self.skill_list.all?{|skill| skill.blank? }    
   end
 
+  # def toggle_completed
+  # end
+
   def category
     project_categories = {}
     begin
