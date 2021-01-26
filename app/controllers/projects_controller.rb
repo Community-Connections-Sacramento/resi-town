@@ -148,6 +148,7 @@ class ProjectsController < ApplicationController
     if @project.volunteered_users.include?(current_user)
       @project.volunteers.where(user: current_user).destroy_all
       flash[:notice] = I18n.t('we_ve_removed_you_from_the_list_of_volunteered_peo')
+      ProjectMailer.with(project: @project, user: current_user).cancel_volunteer.deliver_now
     else
       params[:volunteer_note] ||= ''
 
