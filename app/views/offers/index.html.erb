@@ -7,8 +7,8 @@
       <span class="submenu-item"><%= link_to t('playbook'), '#resource_playbook' %></span>
       <span class="submenu-item"><%= link_to t('recorded_panels'), '#resources_recorded_live_panels' %></span>
       -->
-      <span class="submenu-item"><%= link_to t('funding_resources'), '#resource_funding' %></span>
       <span class="submenu-item"><%= link_to t('deals'), '#resource_deals' %></span>
+      <span class="submenu-item"><%= link_to t('funding_resources'), '#resource_funding' %></span>
       <span class="submenu-item"><%= link_to t('partner_resources'), '#partner_resource' %></span>
     </div>
   </div>
@@ -17,8 +17,6 @@
 <!--
 <%= render partial: 'partials/events' %>
 -->
-
-<%= render partial: 'resources-links', locals: { title: t('funding_volunteers_research_resources'), resources: Settings.funding_resources, html_id: 'resource_funding' } %>
 <section class="resource-section" id="resource_deals">
   <div class="container mb-8">
     <div class="px-4 sm:px-0 mt-10 mb-3 font-bold text-center">
@@ -33,15 +31,23 @@
           </button>
         <% end %>
       </span>
-
+      <!--
       <span class="text-xs ml-3">
         <%= t('find_more_deals') %> <%= link_to t('here'), "https://www.notion.so/Deals-for-businesses-in-the-time-of-COVID-19-bed1c16caf6e4861a24a6e2c21ee1c9a", target: '_blank', class: 'underline' %>.
       </span>
+      -->
     </div>
   </div>
 
   <%= render partial: 'offers' %>
+  </section>
+
+<%= render partial: 'resources-links', locals: { title: t('funding_volunteers_research_resources'), resources: Settings.funding_resources, html_id: 'resource_funding' } %>
+
+<section class="partner-resources" id="partner_resources">
+  <div class="container mb-8">
   <%= render partial: 'partner-resources' %>
+  </div>
 <!---
   <%= render partial: 'media-kit' %>
   --->

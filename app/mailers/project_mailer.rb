@@ -8,7 +8,7 @@ class ProjectMailer < ApplicationMailer
 
   def new_project
     @project = params[:project]
-    mail(to: "<#{@project.user.email}>", bcc: MAILER_BCC, subject: "You created a new position: #{@project.name}!")
+    mail(to: "<#{@project.user.email}>", bcc: MAILER_BCC, subject: "You created a new opportunity: #{@project.name}!")
   end
 
   def cancel_volunteer

@@ -61,14 +61,14 @@ volunteers_needed_for_project:
   - '100+'
 
 project_types:
+  - E-Learning
+  - Help Out Communities
+  - Job Placement
+  - Other
+  - Map Volunteers To Needs
+  - Mental Health
   - News and Information
   - Social Giving
-  - E-Learning
-  - Map Volunteers To Needs
-  - Job Placement
-  - Mental Health
-  - Help Out Communities
-  - Other
 
 project_statuses:
   - 'Just started'
