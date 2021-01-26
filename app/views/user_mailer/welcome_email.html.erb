@@ -1,0 +1,25 @@
+<h2>Thank you for joing the ResiTown community!</h2>
+
+<p>You have successfully signed up with the email address <%= @user.email %></p>
+
+<h3>For Volunteers:</h3>
+<p>
+  - Please <%= link_to "update your profile", edit_user_registration_url, target: "_blank" %> and add your skills and level of availability.
+</p>
+<p>
+  - <%= link_to "Browse the project list", projects_url, target: "_blank" %> daily and see if anything pops up that resonates with you.
+</p>
+<h3>For Organizations:</h3>
+<p>
+  - <%= link_to "Update your profile.", edit_user_registration_url, target: "_blank" %> <br/>
+  Note: Designated organization profiles are coming soon. Please complete with the details of your organization.
+</p>
+<p>
+  -  <%= link_to "Create your first opportunity here", new_project_url, target: "_blank" %> and add the details for your opportunity.
+</p>
+<p>
+  - Need inspiration? <%= link_to "Browse the project list", projects_url, target: "_blank" %>  and see if anything sparks your imagination.
+</p>
+
+<p>Thank you for doing your part to help our communities!<br/>
+  The ResiTown Sacramento Volunteer team</p>
