@@ -15,6 +15,7 @@ class Project < ApplicationRecord
   acts_as_taggable_on :categories
   acts_as_taggable_on :project_types
   acts_as_taggable_on :locations
+  acts_as_taggable_on :completions
 
   pg_search_scope :search, against: %i(name description participants looking_for volunteer_location target_country target_location highlight)
 
