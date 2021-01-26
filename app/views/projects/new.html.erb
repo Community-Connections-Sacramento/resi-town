@@ -1,5 +1,13 @@
 <div class="container">
   <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+    <% if @project.errors.any? %>
+      <% @project.errors.full_messages.each do |message|%>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold"><%= message %></strong>
+        </div>
+      <%end%>
+    <%end%>
+  <br/>
     <%= form_for @project do |f| %>
       <%= render partial: 'project_form', locals: {f: f, title: t('create_new_project'), cta: t('create_project')} %>
     <% end %>

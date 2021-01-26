@@ -6,6 +6,7 @@ class Project < ApplicationRecord
 
   validates :name, presence: true
   validates :short_description, length: { maximum: 129 }
+  validate :must_have_one_skill, on: :create
 
   has_many :volunteers, dependent: :destroy
   has_many :volunteered_users, through: :volunteers, source: :user, dependent: :destroy
@@ -78,6 +79,10 @@ class Project < ApplicationRecord
       ],
       methods: [:to_param, :volunteered_users_count, :project_type_list, :location_list, :category_list, :skill_list]
     )
+  end
+
+  def must_have_one_skill
+    errors.add(:base, 'You must select at least one skill') if self.skill_list.all?{|skill| skill.blank? }    
   end
 
   def category
