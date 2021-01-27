@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about', as: 'about'
   get '/podcast', to: 'home#podcast', as: 'podcast'
 
+  get '/guidelines', to: 'projects#guidelines', as: 'guidelines'
+
   get '/data/projects',   to: 'data#projects'
   get '/data/users',      to: 'data#users'
   get '/data/volunteers', to: 'data#volunteers'
