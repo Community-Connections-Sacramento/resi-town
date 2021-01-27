@@ -263,7 +263,7 @@ funding_resources:
 partner_resources:
   - name: AWS
     description: $10,000 in AWS credits for approved projects. Your project must be a corporate entity. Email helpwithcovid@gmail.com
-    mail_to: helpwithcovid@gmail.com
+    mail_to: info@sacconect.com
   - name: ClozeLoop
     description: |+
       Complete Sales Effectiveness Assessments for three companies we choose. The Sales Effectiveness Assessment is an evaluation of your company’s sales Strategy, Systems, Staff and Skills aligned with short and long-term revenue goals. The assessment provides a prioritized high-impact roadmap, and clear recommendations for growth.

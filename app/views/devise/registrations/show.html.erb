@@ -30,7 +30,7 @@
               <%= t('email') %>
             </dt>
             <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-              <%= mail_to @user.email, nil, encode: 'javascript', class: 'text-primary-500' %>
+              <%= mail_to @user.email, nil, encode: 'javascript', target: :_blank, class: 'text-primary-500' %>
             </dd>
           </div>
         <% end %>

@@ -119,7 +119,7 @@ const VolunteerGroups = {
       }
     });
 
-    const subject = `[Help With Covid] Greetings - Project/Volunteers Introduction`;
+    const subject = `[Resitown Sacramento] Greetings - Project/Volunteers Introduction`;
 
     let volunteersBody = [];
     for (const volunteer of volunteers) {
@@ -128,18 +128,18 @@ const VolunteerGroups = {
 
     let body = `Hi there!
 
-Hope you are all doing well! Thank you for all that you are doing to work on a solution for our world and being part of helpwithcovid.com.
+Hope you are all doing well! Thank you for all that you are doing to work on a solution for our world and being part of resitown.com.
 
-This project needs your help: ${projectName} (http://helpwithcovid.com/projects/${projectId}) by project owner - ${projectOwnerEmail}. I thought you might be able to help. I have included the project owner to this email should you have any questions.
+This project needs your help: ${projectName} (http://resitown.com/projects/${projectId}) by project owner - ${projectOwnerEmail}. I thought you might be able to help. I have included the project owner to this email should you have any questions.
 
-If you are already on an existing project, please login to helpwithcovid.com and remove the setting "pair me with a project" from your profile page (https://helpwithcovid.com/users/edit).
+If you are already on an existing project, please login to resitown.com and remove the setting "pair me with a project" from your profile page (https://resitown.com/users/edit).
 
-If you feel that you are not the right fit after speaking with the project owner, please go to the project link (http://helpwithcovid.com/projects/${projectId}) and “cancel volunteer offer”. We will work on matching you to another project.
+If you feel that you are not the right fit after speaking with the project owner, please go to the project link (http://resitown.com/projects/${projectId}) and “cancel volunteer offer”. We will work on matching you to another project.
 
 Please let me know if you have any questions or concerns.
 
 Thank you!
-HWC Core team`;
+ResitownSacramento team`;
 
     const mailHref = `mailto:${projectOwnerEmail}?reply-to=${projectOwnerEmail}&bcc=${volunteerEmails.join(',').replace(/\+/g, '%2B')}&subject=${subject}&body=${body.replace(/\n/g, '%0D%0A').replace(/\+/g, '%2B')}`;
     window.open(mailHref, '_blank');
