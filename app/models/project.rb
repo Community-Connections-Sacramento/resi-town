@@ -7,6 +7,7 @@ class Project < ApplicationRecord
   validates :name, presence: true
   validates :short_description, length: { maximum: 129 }
   validate :must_have_one_skill, on: :create
+  validate :date_order, on: :create
 
   has_many :volunteers, dependent: :destroy
   has_many :volunteered_users, through: :volunteers, source: :user, dependent: :destroy
@@ -84,6 +85,12 @@ class Project < ApplicationRecord
 
   def must_have_one_skill
     errors.add(:base, 'You must select at least one skill') if self.skill_list.all?{|skill| skill.blank? }    
+  end
+
+  def date_order
+    if self.end_date   
+      errors.add(:base, 'End date must be after start date') if Date.parse(self.start_date) > Date.parse(self.end_date)
+    end
   end
 
   def category
