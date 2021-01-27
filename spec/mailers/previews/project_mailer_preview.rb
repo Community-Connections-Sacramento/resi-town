@@ -7,8 +7,8 @@ class ProjectMailerPreview < ActionMailer::Preview
     ProjectMailer.with(project: project, user: user, note: 'Note from volunteer').new_volunteer
   end
 
-  def volunter_outreach
-    user = User.first
-    ProjectMailer.with(user: user).volunteer_outreach
-  end
+  # def volunter_outreach
+  #   user = User.first
+  #   ProjectMailer.with(user: user).volunteer_outreach
+  # end
 end
