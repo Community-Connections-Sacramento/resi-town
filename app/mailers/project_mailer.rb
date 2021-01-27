@@ -14,7 +14,7 @@ class ProjectMailer < ApplicationMailer
   def cancel_volunteer
     @user = params[:user]
     @project = params[:project]
-    mail(to: "<#{@user.email}>", subject: "[@no-reply: ResiTown Sacramento] Your Request To Volunteer Has Been Canceled")
+    mail(to: "<#{@user.email}>", subject: "[ResiTown Sacramento: noreply] Your Request To Volunteer Has Been Canceled")
   end
 
   def volunteer_outreach
