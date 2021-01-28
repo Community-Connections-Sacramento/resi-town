@@ -88,8 +88,12 @@ class Project < ApplicationRecord
   end
 
   def date_order
-    if self.end_date   
-      errors.add(:base, 'End date must be after start date') if Date.parse(self.start_date) > Date.parse(self.end_date)
+    if self.end_date_recurring != true
+      if self.end_date != ''
+        errors.add(:base, 'End date must be after start date') if Date.parse(self.start_date) > Date.parse(self.end_date)
+      elsif self.end_date == ''
+        errors.add(:base, 'You must provide an end date or select "Recurring"')
+      end 
     end
   end
 
