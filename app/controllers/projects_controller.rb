@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, only: [ :new, :create, :edit, :update, :destroy, :toggle_volunteer, :volunteered, :own, :volunteers ]
-  before_action :set_project, only: [ :show, :edit, :update, :destroy, :toggle_volunteer, :volunteers ]
+  before_action :authenticate_user!, only: [ :new, :create, :edit, :update, :destroy, :toggle_volunteer, :completed_volunteer, :volunteered, :own, :volunteers ]
+  before_action :set_project, only: [ :show, :edit, :update, :destroy, :toggle_volunteer, :completed_volunteer, :volunteers ]
   before_action :ensure_owner_or_admin, only: [ :edit, :update, :destroy, :volunteers ]
   before_action :set_filters_open, only: :index
   before_action :set_projects_query, only: :index
@@ -146,6 +146,7 @@ class ProjectsController < ApplicationController
 
   def toggle_volunteer
     if @project.volunteered_users.include?(current_user)
+      #byebug
       @project.volunteers.where(user: current_user).destroy_all
       flash[:notice] = I18n.t('we_ve_removed_you_from_the_list_of_volunteered_peo')
       ProjectMailer.with(project: @project, user: current_user).cancel_volunteer.deliver_now
@@ -161,6 +162,18 @@ class ProjectsController < ApplicationController
     end
 
     redirect_to project_path(@project)
+  end
+
+  def completed_volunteer
+    #byebug
+    if @project.volunteered_users.include?(current_user)
+      #byebug
+      @project.volunteers.where(user: current_user).destroy_all
+      flash[:notice] = I18n.t('completed')
+      #ProjectMailer.with(project: @project, user: current_user).cancel_volunteer.deliver_now
+    end
+
+    redirect_to volunteered_projects_path
   end
 
   private

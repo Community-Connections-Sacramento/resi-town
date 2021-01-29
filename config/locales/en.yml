@@ -171,6 +171,8 @@ en:
   project_was_successfully_updated: "Opportunity was successfully updated."
   project_was_successfully_deleted: "Opportunity was successfully deleted."
   we_ve_removed_you_from_the_list_of_volunteered_peo: "We've removed you from the list of volunteered people."
+  completed: "We've marked your volunteer offer as complete and removed the opportunity from your list."
+  volunteer_completed: "Mark as Completed and Remove"
   thanks_for_volunteering_the_project_owners_will_be: "Thanks for volunteering! The project owners will be alerted."
   story_was_successfully_created: "Story was successfully created."
   story_was_successfully_updated: "Story was successfully updated."

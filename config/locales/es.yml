@@ -166,6 +166,8 @@ es:
   project_was_successfully_updated: "La oportunidad se actualizó con éxito."
   project_was_successfully_deleted: "La oportunidad fue eliminado exitosamente."
   we_ve_removed_you_from_the_list_of_volunteered_peo: "Te hemos eliminado de la lista de personas voluntarias."
+  completed: "Hemos marcado su oferta de voluntariado como completa y hemos eliminado la oportunidad de su lista."
+  volunteer_completed: "Marcar como completado y eliminar"
   thanks_for_volunteering_the_project_owners_will_be: "Gracias por ser voluntario! Se notifican los propietarios del proyecto."
   story_was_successfully_created: "La historia fue creada exitosamente."
   story_was_successfully_updated: "La historia se actualizó correctamente."
