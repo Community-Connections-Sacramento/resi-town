@@ -228,6 +228,7 @@ en:
   book_a_time_with_name_below_or_find_more_people: "Book a time with %{name} below or find more people %{link_to}."
   filter_by: "Filter by"
   all_categories: "All Categories"
+  all_locations: "All Locations"
   select: "Select"
   all: "All"
   none: "None"
